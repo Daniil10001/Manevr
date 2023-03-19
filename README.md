@@ -6,15 +6,28 @@
 ![Gmat_img_2](https://github.com/Daniil10001/Manevr/blob/main/img/img2.jpg)
 
 Для оптимизации маневра я выбрал нейронную сеть как аппроксимацию таблицы времени запуска двигателя и включения РСУ и генетический алгоритм для оптимизации самой НС. Также был разработан способ оценки приспособленности решения и учета времени отклика блока управления спутником и активации двигателя.
+
 ![Neuron Network](https://github.com/Daniil10001/Manevr/blob/main/img/img3.jpg)
 
 С помощью языка программирования Python разработана программа, которая с помощью модулей *pygad* и *scipy* запускает оптимизацию, в ходе которой решается система дифференциальных уравнений, чтобы определить приспособленность функции.
 
-![enter image description here](https://latex.codecogs.com/svg.image?%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D&space;%5Cfrac%7B%5Cpartial&space;v_%7Bx%7D%7D%7B%5Cpartial&space;t%7D&space;=&space;-&space;%5Ctfrac%7BG*M*x%7D%7B%7B%28%7Bx%7D%5E%7B2%7D&plus;%7By%7D%5E%7B2%7D%29%7D%5E%7B%5Cfrac%7B3%7D%7B2%7D%7D%7D&space;&plus;&space;F%28t%29*sin%5Cvarphi&space;&space;%5C%5C%5Cfrac%7B%5Cpartial&space;v_%7By%7D%7D%7B%5Cpartial&space;t%7D&space;=&space;-&space;%5Ctfrac%7BG*M*y%7D%7B%7B%28%7Bx%7D%5E%7B2%7D&plus;%7By%7D%5E%7B2%7D%29%7D%5E%7B%5Cfrac%7B3%7D%7B2%7D%7D%7D&space;&plus;&space;F%28t%29*cos%5Cvarphi&space;&space;%5C%5C%5Cfrac%7B%5Cpartial&space;x%7D%7B%5Cpartial&space;t%7D&space;=&space;v_%7Bx%7D&space;%5C%5C%5Cfrac%7B%5Cpartial&space;y%7D%7B%5Cpartial&space;t%7D&space;=&space;v_%7By%7D&space;%5C%5C%5Cfrac%7B%5Cpartial&space;%5Cvarphi&space;%7D%7B%5Cpartial&space;t%7D&space;=&space;%5Comega%28t%29%5Cend%7Bmatrix%7D%5Cright.)
+```math
+{\left\{\begin{matrix}
+ \frac{\partial v_{x}}{\partial t} = - \tfrac{G*M*x}{{({x}^{2}+{y}^{2})}^{\frac{3}{2}}} + F(t)*sin\varphi 
+ \\\frac{\partial v_{y}}{\partial t} = - \tfrac{G*M*y}{{({x}^{2}+{y}^{2})}^{\frac{3}{2}}} + F(t)*cos\varphi 
+ \\\frac{\partial x}{\partial t} = v_{x}
+ \\\frac{\partial y}{\partial t} = v_{y}
+ \\\frac{\partial \varphi }{\partial t} = \omega(t)
+\end{matrix}\right.}
+```
 
 Но из-за то, что алгоритм быстро попадает в локальный минимум, мы не можем добиться лучших результатов. Поэтому сейчас ведется работа над алгоритмом пред обучения, чтобы обойти локальные минимумы.
 
 Для сбалансированного манера 
+
 ![graphic1](https://github.com/Daniil10001/Manevr/blob/main/img/img4.jpg)
+
 Для полученного решения манера
+
+
 ![graphic2](https://github.com/Daniil10001/Manevr/blob/main/img/img5.jpg)
