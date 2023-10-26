@@ -13,8 +13,8 @@
 
 ```math
 {\left\{\begin{matrix}
- \frac{\partial v_{x}}{\partial t} = - \tfrac{G*M*x}{{({x}^{2}+{y}^{2})}^{\frac{3}{2}}} + F(t)*sin\varphi 
- \\\frac{\partial v_{y}}{\partial t} = - \tfrac{G*M*y}{{({x}^{2}+{y}^{2})}^{\frac{3}{2}}} + F(t)*cos\varphi 
+ \frac{\partial v_{x}}{\partial t} = - \tfrac{G*M*x}{{({x}^{2}+{y}^{2})}^{\frac{3}{2}}} + \frac{F(t)}{m(t)}*sin\varphi 
+ \\\frac{\partial v_{y}}{\partial t} = - \tfrac{G*M*y}{{({x}^{2}+{y}^{2})}^{\frac{3}{2}}} + \frac{F(t)}{m(t)}*cos\varphi 
  \\\frac{\partial x}{\partial t} = v_{x}
  \\\frac{\partial y}{\partial t} = v_{y}
  \\\frac{\partial \varphi }{\partial t} = \omega(t)
